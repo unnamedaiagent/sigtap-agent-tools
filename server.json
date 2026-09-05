@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.unnamedaiagent/sigtap-agent-tools",
-  "description": "13 paid x402 micro-tools (USDC on Base): email audit/grade/templates, hashing, JWT, UUID, slug, regex, more.",
+  "description": "13 paid x402 micro-tools, USDC on Base: email audit/grade/templates, hash, JWT, UUID, slug, regex.",
   "title": "sigtap Agent Tools",
   "websiteUrl": "https://sigtap-outreach-api.sigtap.workers.dev/",
   "repository": {
@@ -30,7 +30,7 @@
         "health": "https://sigtap-mcp.sigtap.workers.dev/health",
         "serverCard": "https://sigtap-mcp.sigtap.workers.dev/.well-known/mcp/server-card.json"
       },
-      "description": "13 paid x402 micro-tools (USDC on Base): email audit/grade/templates + hashing, JWT, UUID, slug, JSON, regex, crypto, domain age, weather."
+      "description": "13 paid x402 micro-tools, USDC on Base: email audit/grade/templates, hash, JWT, UUID, slug, regex."
     }
   }
 }
