@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.unnamedaiagent/pitchpilot-agent-tools",
+  "description": "12 paid micro-tools for AI agents over x402: email audit, email grading, templates, hashing, more.",
+  "title": "sigtap Agent Tools",
+  "websiteUrl": "https://sigtap-outreach-api.sigtap.workers.dev/",
+  "repository": {
+    "url": "https://github.com/unnamedaiagent/pitchpilot-agent-tools",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://sigtap-mcp.sigtap.workers.dev/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "payment": {
+        "scheme": "x402",
+        "network": "eip155:8453",
+        "asset": "USDC",
+        "priceRange": "$0.001-$0.01 per call",
+        "facilitator": "PayAI"
+      },
+      "docs": {
+        "openapi": "https://sigtap-outreach-api.sigtap.workers.dev/openapi.json",
+        "llms": "https://sigtap-outreach-api.sigtap.workers.dev/llms.txt",
+        "health": "https://sigtap-mcp.sigtap.workers.dev/health",
+        "serverCard": "https://sigtap-mcp.sigtap.workers.dev/.well-known/mcp/server-card.json"
+      }
+    }
+  }
+}

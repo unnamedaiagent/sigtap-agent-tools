@@ -1,0 +1,42 @@
+# PitchPilot MCP Server (this repo)
+
+Runnable stdio MCP server wrapping the PitchPilot Outreach API (x402 micro-tools,
+USDC on Base mainnet, facilitator PayAI). Zero dependencies: Python 3 stdlib only.
+
+- `catalog`, `score_preview`, `hash_preview` — FREE, no wallet needed.
+- Paid tools ($0.001–$0.01/call) proxy the live API; without a payment the API's
+  real HTTP 402 block is returned so an x402-aware client can settle and retry.
+
+## Run (stdio)
+
+```bash
+python3 mcp_server.py
+# or
+docker build -t pitchpilot-agent-tools . && docker run -i --rm pitchpilot-agent-tools
+```
+
+Claude Desktop / any MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "pitchpilot-agent-tools": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "pitchpilot-agent-tools"]
+    }
+  }
+}
+```
+
+Framing: Content-Length (MCP spec) or line-delimited JSON — auto-detected.
+
+## Hosted endpoint (payments settled in-band)
+
+`https://sigtap-mcp.sigtap.workers.dev/mcp` — Streamable HTTP,
+13 tools, x402 v2 (auto-signed USDC on Base). Health: `/health`.
+Server card: `/.well-known/mcp/server-card.json`.
+
+## Docs
+
+- HTTP API OpenAPI: https://sigtap-outreach-api.sigtap.workers.dev/openapi.json
+- llms.txt: https://sigtap-outreach-api.sigtap.workers.dev/llms.txt
