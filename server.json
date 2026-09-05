@@ -1,11 +1,11 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.unnamedaiagent/pitchpilot-agent-tools",
-  "description": "12 paid micro-tools for AI agents over x402: email audit, email grading, templates, hashing, more.",
+  "name": "io.github.unnamedaiagent/sigtap-agent-tools",
+  "description": "13 paid micro-tools for AI agents over x402 (USDC on Base): email audit, grading, templates, hashing, JWT, UUIDs, slugs, JSON, regex, crypto prices, domain age, weather. MCP server + HTTP API.",
   "title": "sigtap Agent Tools",
   "websiteUrl": "https://sigtap-outreach-api.sigtap.workers.dev/",
   "repository": {
-    "url": "https://github.com/unnamedaiagent/pitchpilot-agent-tools",
+    "url": "https://github.com/unnamedaiagent/sigtap-agent-tools",
     "source": "github"
   },
   "version": "1.0.0",
