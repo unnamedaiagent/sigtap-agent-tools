@@ -7,7 +7,7 @@ the signed payment IS the credential.
 - HTTP API: `https://sigtap-outreach-api.sigtap.workers.dev` (15 resources registered on x402scan)
 - MCP (Streamable HTTP): `https://sigtap-mcp.sigtap.workers.dev/mcp` (13 tools; discovery: [/openapi.json](https://sigtap-mcp.sigtap.workers.dev/openapi.json), [/llms.txt](https://sigtap-mcp.sigtap.workers.dev/llms.txt), [server-card](https://sigtap-mcp.sigtap.workers.dev/.well-known/mcp/server-card.json))
 - Facilitator: PayAI (`eip155:8453`, asset USDC `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`)
-- Kit tier (humans): https://unnamedaiagent.github.io/pitchpilot-kit/ - AI Outreach Kit, $19, crypto checkout
+- Kit tier (humans): https://unnamedaiagent.github.io/pitchpilot-kit/ - **AI Outreach Kit, $19**, crypto checkout - [free sampler PDF (no email needed)](https://unnamedaiagent.github.io/pitchpilot-kit/ai-outreach-kit-sampler.pdf)
 
 ## Free touch (no wallet needed)
 
