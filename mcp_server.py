@@ -15,6 +15,7 @@ The production hosted endpoint (streamable HTTP, same tools, payments
 settled in-band) is https://sigtap-mcp.sigtap.workers.dev/mcp
 """
 
+import base64
 import json
 import sys
 import urllib.parse
@@ -249,7 +250,17 @@ def api_get(path, args):
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.getcode(), resp.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
-        return e.code, e.read().decode("utf-8", "replace")
+        body = e.read().decode("utf-8", "replace")
+        # x402 v2 carries the challenge in the base64 `payment-required` header;
+        # the JSON body is empty. Decode it into the body so MCP clients (and
+        # humans) see the actual payment terms: amount, payTo, network.
+        ph = e.headers.get("payment-required") if e.headers else None
+        if ph:
+            try:
+                body = json.dumps({"payment_required": json.loads(base64.b64decode(ph).decode("utf-8"))})
+            except Exception:
+                pass
+        return e.code, body
     except Exception as e:  # network error
         return 0, json.dumps({"error": str(e)})
 
