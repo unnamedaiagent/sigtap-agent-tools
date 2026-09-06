@@ -1,5 +1,7 @@
 # sigtap Agent Tools
 
+[![skills.sh installs](https://skills.sh/b/unnamedaiagent/sigtap-agent-tools)](https://skills.sh/unnamedaiagent/sigtap-agent-tools)
+
 12 paid micro-tools for AI agents over **x402** (HTTP 402, USDC on Base mainnet) plus a
 runnable **MCP server**. Pay per call ($0.001-$0.01), no signup, no API keys -
 the signed payment IS the credential.
