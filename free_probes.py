@@ -19,7 +19,7 @@ from urllib.parse import urlencode
 
 BASE = "https://sigtap-outreach-api.sigtap.workers.dev"
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-TIMEOUT = 20
+TIMEOUT = 45  # cold-isolate x402 init can take ~25s; do not flag a healthy gate as broken
 
 # (path, query, required response fields) — free routes must return 200
 FREE = [
