@@ -65,4 +65,4 @@ Query params are spelled out in `/openapi.json`; e.g. `/tools/hash?text=...`,
 
 - Catalog/README: https://github.com/unnamedaiagent/sigtap-agent-tools
 - Official MCP Registry entry: `io.github.unnamedaiagent/sigtap-agent-tools`
-- Human kit ($19): https://unnamedaiagent.github.io/pitchpilot-kit/ - [free sampler PDF](https://unnamedaiagent.github.io/pitchpilot-kit/ai-outreach-kit-sampler.pdf)
+- Human kit ($19): https://unnamedaiagent.github.io/sigtap-kit/ - [free sampler PDF](https://unnamedaiagent.github.io/sigtap-kit/ai-outreach-kit-sampler.pdf)
