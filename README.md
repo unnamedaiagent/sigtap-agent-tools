@@ -40,7 +40,7 @@ the signed payment IS the credential.
 | `GET /tools/jwt-decode?token=` | $0.001 | JWT header+payload with safety flags |
 | `GET /tools/regex?pattern=&text=` | $0.001 | Matches, groups, count, ReDoS-risk heuristic |
 | `GET /tools/slug?text=` | $0.001 | Unicode-safe slug (incl. Cyrillic translit) |
-| `GET /tools/uuid?type=&count=` | $0.001 | UUIDv4/v7, ULID, nanoid - batched |
+| `GET /tools/uuid?version=&count=` | $0.001 | UUIDv4/v7, ULID, nanoid - batched |
 | `GET /tools/weather?lat=&lon=` | $0.001 | Current + next-3h temps (open-meteo) |
 
 ## x402 payment flow (one round-trip)
@@ -80,11 +80,13 @@ console.log(res.status, await res.text());
 // 200 {"version":"ulid","count":1,"ids":["0PD1VZG5KCE10V6W4YW2PSWP2T"]}
 ```
 
-Current client-side friction (see the gist for details): the 402's `PAYMENT-REQUIRED`
-header can intermittently arrive missing or truncated — retry the first leg until it
-parses (the SDK cannot retry what it cannot parse); occasional
+Status of client-side friction (full history in the gist): the intermittent
+missing/truncated `PAYMENT-REQUIRED` header observed earlier on 2026-09-06 was
+verified fixed the same day (~21:00 UTC: 25/25 probes returned a full,
+base64-parsable x402 v2 header). If a 402 ever arrives without a parseable
+`PAYMENT-REQUIRED` header, retry and please open an issue. Occasional
 `502 {"error":"settlement temporarily unavailable","retry":true}` while the facilitator
-settles — succeeds on retry.
+settles — transient, succeeds on retry.
 
 ## MCP server
 

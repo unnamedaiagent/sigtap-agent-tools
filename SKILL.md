@@ -41,9 +41,11 @@ OpenAPI: https://sigtap-outreach-api.sigtap.workers.dev/openapi.json
 ## How to pay
 
 Use any x402-capable HTTP client: call the endpoint, receive `402` with
-payment terms, sign the USDC payment (Base), retry with the
-`X-PAYMENT` header. Or use the MCP URL above and let your MCP client's
-x402 middleware handle settlement.
+payment terms in the base64 `PAYMENT-REQUIRED` header, sign the USDC
+payment (Base), retry with the `PAYMENT-SIGNATURE` header (x402 v2;
+legacy v1 clients use `X-PAYMENT`). Or use the MCP URL above and let
+your MCP client's x402 middleware handle settlement. A working v2
+client: https://gist.github.com/unnamedaiagent/3ce577e58011bc8b10ee460be5b965d6
 
 ## Client notes (avoid a silent 403)
 
