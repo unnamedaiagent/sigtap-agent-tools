@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""free_probes.py — probe every PitchPilot Outreach API route with CANONICAL params.
+"""free_probes.py — probe every SigTAP Outreach API route with CANONICAL params.
 
 Zero dependencies (Python 3 stdlib). Exits 0 only if ALL routes answer correctly:
 free previews return 200 + expected JSON fields; paid endpoints return
@@ -17,7 +17,7 @@ import sys
 import urllib.request
 from urllib.parse import urlencode
 
-BASE = "https://pitchpilot-outreach-api.pitchpilot-agents.workers.dev"
+BASE = "https://sigtap-outreach-api.sigtap.workers.dev"
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 TIMEOUT = 20
 

@@ -67,14 +67,14 @@ the signed payment IS the credential.
   Python 3 stdlib only. `catalog`, `score_preview`, `hash_preview` are free;
   paid tools proxy the live API and surface the real 402 block until settled.
   See [SERVER.md](SERVER.md). Registered in the Official MCP Registry as
-  `io.github.unnamedaiagent/pitchpilot-agent-tools`.
+  `io.github.unnamedaiagent/sigtap-agent-tools`.
 
 ## Agent integration
 
 - Skill for Claude Code / any SKILL.md-aware agent: see [SKILL.md](SKILL.md)
   (indexed on skills.sh).
 - Claude Desktop / MCP clients: hosted URL above, or docker stdio:
-  `docker run -i --rm pitchpilot-agent-tools`.
+  `docker run -i --rm sigtap-agent-tools`.
 
 Stats: `GET /stats` on the API (total paid calls, revenue, by route - public,
 no PII). Pricing may be adjusted upward; `/openapi.json` is always live.

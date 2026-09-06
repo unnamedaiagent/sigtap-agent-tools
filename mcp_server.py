@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""PitchPilot Agent Tools - MCP server (stdio, zero-dependency).
+"""SigTAP Agent Tools - MCP server (stdio, zero-dependency).
 
-Wraps the PitchPilot Outreach API (x402 paid micro-tools, USDC on Base)
+Wraps the SigTAP Outreach API (x402 paid micro-tools, USDC on Base)
 as MCP tools. Design:
 
 - `catalog` tool and two free-preview tools work with NO wallet.
@@ -12,7 +12,7 @@ as MCP tools. Design:
   the MCP spec) or line-delimited JSON - whichever the client sends.
 
 The production hosted endpoint (streamable HTTP, same tools, payments
-settled in-band) is https://pitchpilot-mcp.pitchpilot-agents.workers.dev/mcp
+settled in-band) is https://sigtap-mcp.sigtap.workers.dev/mcp
 """
 
 import json
@@ -20,8 +20,8 @@ import sys
 import urllib.parse
 import urllib.request
 
-API = "https://pitchpilot-outreach-api.pitchpilot-agents.workers.dev"
-MCP_URL = "https://pitchpilot-mcp.pitchpilot-agents.workers.dev/mcp"
+API = "https://sigtap-outreach-api.sigtap.workers.dev"
+MCP_URL = "https://sigtap-mcp.sigtap.workers.dev/mcp"
 PROTOCOL_VERSION = "2024-11-05"
 
 # ---------------------------------------------------------------------------
@@ -33,7 +33,7 @@ PROTOCOL_VERSION = "2024-11-05"
 TOOLS = [
     {
         "name": "catalog",
-        "description": "List all PitchPilot tools with prices and free previews. Free, no payment required.",
+        "description": "List all SigTAP tools with prices and free previews. Free, no payment required.",
         "price": 0.0,
         "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
     },
@@ -244,7 +244,7 @@ def api_get(path, args):
     url = API + path
     if qs:
         url += "?" + urllib.parse.urlencode(qs)
-    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "pitchpilot-agent-tools/1.0 (MCP stdio server)"})
+    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "sigtap-agent-tools/1.0 (MCP stdio server)"})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.getcode(), resp.read().decode("utf-8", "replace")
@@ -261,7 +261,7 @@ def call_tool(name, arguments):
                 {
                     "type": "text",
                     "text": (
-                        "PitchPilot Agent Tools - x402 micro-tools, USDC on Base.\n"
+                        "SigTAP Agent Tools - x402 micro-tools, USDC on Base.\n"
                         "Free previews: score_preview, hash_preview.\n\n" + CATALOG_TEXT
                     ),
                 }
@@ -305,7 +305,7 @@ def handle(msg):
             "result": {
                 "protocolVersion": (msg.get("params") or {}).get("protocolVersion", PROTOCOL_VERSION),
                 "capabilities": {"tools": {}, "resources": {}, "prompts": {}},
-                "serverInfo": {"name": "pitchpilot-agent-tools", "version": "1.0.0"},
+                "serverInfo": {"name": "sigtap-agent-tools", "version": "1.0.0"},
             },
         }
     if method == "ping":

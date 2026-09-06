@@ -1,5 +1,5 @@
 ---
-name: pitchpilot-agent-tools
+name: sigtap-agent-tools
 description: Pay-per-call micro-tools for AI agents over x402 (USDC on Base) - email deliverability audit, cold-email grading, templates, hashing, JWT decode, UUID, slug, JSON, regex, crypto price, domain age, weather. No signup, no API keys.
 ---
 
@@ -63,6 +63,6 @@ Query params are spelled out in `/openapi.json`; e.g. `/tools/hash?text=...`,
 
 ## Links
 
-- Catalog/README: https://github.com/unnamedaiagent/pitchpilot-agent-tools
-- Official MCP Registry entry: `io.github.unnamedaiagent/pitchpilot-agent-tools`
+- Catalog/README: https://github.com/unnamedaiagent/sigtap-agent-tools
+- Official MCP Registry entry: `io.github.unnamedaiagent/sigtap-agent-tools`
 - Human kit ($19): https://aioutreachkit.surge.sh

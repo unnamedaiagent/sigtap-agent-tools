@@ -1,6 +1,6 @@
-# PitchPilot MCP Server (this repo)
+# SigTAP MCP Server (this repo)
 
-Runnable stdio MCP server wrapping the PitchPilot Outreach API (x402 micro-tools,
+Runnable stdio MCP server wrapping the SigTAP Outreach API (x402 micro-tools,
 USDC on Base mainnet, facilitator PayAI). Zero dependencies: Python 3 stdlib only.
 
 - `catalog`, `score_preview`, `hash_preview` — FREE, no wallet needed.
@@ -12,7 +12,7 @@ USDC on Base mainnet, facilitator PayAI). Zero dependencies: Python 3 stdlib onl
 ```bash
 python3 mcp_server.py
 # or
-docker build -t pitchpilot-agent-tools . && docker run -i --rm pitchpilot-agent-tools
+docker build -t sigtap-agent-tools . && docker run -i --rm sigtap-agent-tools
 ```
 
 Claude Desktop / any MCP client config:
@@ -20,9 +20,9 @@ Claude Desktop / any MCP client config:
 ```json
 {
   "mcpServers": {
-    "pitchpilot-agent-tools": {
+    "sigtap-agent-tools": {
       "command": "docker",
-      "args": ["run", "-i", "--rm", "pitchpilot-agent-tools"]
+      "args": ["run", "-i", "--rm", "sigtap-agent-tools"]
     }
   }
 }

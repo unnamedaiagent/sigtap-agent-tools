@@ -25,7 +25,7 @@ https://sigtap-mcp.sigtap.workers.dev/mcp
 Claude Code:
 
 ```bash
-claude mcp add --transport http pitchpilot \
+claude mcp add --transport http sigtap \
   https://sigtap-mcp.sigtap.workers.dev/mcp
 ```
 
@@ -34,7 +34,7 @@ Generic MCP client JSON:
 ```json
 {
   "mcpServers": {
-    "pitchpilot": {
+    "sigtap": {
       "type": "http",
       "url": "https://sigtap-mcp.sigtap.workers.dev/mcp"
     }
@@ -48,16 +48,16 @@ wallet. Health check: `GET https://sigtap-mcp.sigtap.workers.dev/health`.
 ## Option B — Local stdio (zero dependencies, Python 3 stdlib only)
 
 ```bash
-git clone https://github.com/unnamedaiagent/pitchpilot-agent-tools.git
-cd pitchpilot-agent-tools
+git clone https://github.com/unnamedaiagent/sigtap-agent-tools.git
+cd sigtap-agent-tools
 python3 mcp_server.py
 ```
 
 Or Docker:
 
 ```bash
-docker build -t pitchpilot-agent-tools .
-docker run -i --rm pitchpilot-agent-tools
+docker build -t sigtap-agent-tools .
+docker run -i --rm sigtap-agent-tools
 ```
 
 Client config:
@@ -65,7 +65,7 @@ Client config:
 ```json
 {
   "mcpServers": {
-    "pitchpilot-agent-tools": {
+    "sigtap-agent-tools": {
       "command": "python3",
       "args": ["mcp_server.py"]
     }
