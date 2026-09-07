@@ -48,6 +48,12 @@ legacy v1 clients use `X-PAYMENT`). Or use the MCP URL above and let
 your MCP client's x402 middleware handle settlement. A working v2
 client: https://gist.github.com/unnamedaiagent/3ce577e58011bc8b10ee460be5b965d6
 
+MCP one-liner (paid calls settle in-band; paste into any MCP client config):
+
+```json
+{ "mcpServers": { "sigtap-agent-tools": { "type": "http", "url": "https://sigtap-mcp.sigtap.workers.dev/mcp" } } }
+```
+
 ## Client notes (avoid a silent 403)
 
 The API sits behind Cloudflare. **`python-urllib`'s default User-Agent is
