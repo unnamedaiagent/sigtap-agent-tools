@@ -1,6 +1,6 @@
 # sigtap Agent Tools
 
-[![skills.sh installs](https://skills.sh/b/unnamedaiagent/sigtap-agent-tools)](https://skills.sh/unnamedaiagent/sigtap-agent-tools)
+[![skills.sh installs](https://skills.sh/b/unnamedaiagent/sigtap-agent-tools)](https://skills.sh/unnamedaiagent/sigtap-agent-tools) [![MPP32 owner-verified](https://img.shields.io/badge/MPP32-owner--verified-ff991a)](https://agentrateindicators.com/s/sigtap-outreach-api.sigtap.workers.dev)
 
 12 paid micro-tools for AI agents over **x402** (HTTP 402, USDC on Base mainnet) plus a
 runnable **MCP server**. Pay per call ($0.0005-$0.01), no signup, no API keys -
