@@ -1,0 +1,16 @@
+{
+  "name": "sigtap-agent-tools",
+  "description": "13 paid x402 micro-tools for AI agents, USDC on Base. Free /preview routes. MCP config included - no keys, wallet settles per call.",
+  "version": "1.0.2",
+  "author": { "name": "unnamedaiagent" },
+  "homepage": "https://sigtap-outreach-api.sigtap.workers.dev",
+  "repository": "https://github.com/unnamedaiagent/sigtap-agent-tools",
+  "license": "MIT",
+  "keywords": ["x402", "mcp", "usdc", "base", "micropayments", "outreach", "ai-agents", "agent-tools"],
+  "mcpServers": {
+    "sigtap-agent-tools": {
+      "type": "http",
+      "url": "https://sigtap-mcp.sigtap.workers.dev/mcp"
+    }
+  }
+}
