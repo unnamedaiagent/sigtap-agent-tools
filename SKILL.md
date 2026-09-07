@@ -36,6 +36,7 @@ OpenAPI: https://sigtap-outreach-api.sigtap.workers.dev/openapi.json
 
 - `GET /hash-preview?text=...` - free sha256 + crc32 (first 1000 chars)
 - `GET /score-preview?subject=...` - free subject/length-only grader preview
+- `GET /preview/<paid-path>` - free truncated sample of ANY paid tool (e.g. `/preview/tools/hash?text=hi`, `/preview/uuid`); locked demo input, response carries `paid_unlocks`
 - `GET /` - full live index; `GET /health` - liveness
 
 ## How to pay
