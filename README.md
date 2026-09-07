@@ -3,7 +3,7 @@
 [![skills.sh installs](https://skills.sh/b/unnamedaiagent/sigtap-agent-tools)](https://skills.sh/unnamedaiagent/sigtap-agent-tools)
 
 12 paid micro-tools for AI agents over **x402** (HTTP 402, USDC on Base mainnet) plus a
-runnable **MCP server**. Pay per call ($0.001-$0.01), no signup, no API keys -
+runnable **MCP server**. Pay per call ($0.0005-$0.01), no signup, no API keys -
 the signed payment IS the credential.
 
 - HTTP API: `https://sigtap-outreach-api.sigtap.workers.dev` (15 resources registered on x402scan)
@@ -37,12 +37,12 @@ the signed payment IS the credential.
 |---|---|---|
 | `GET /tools/crypto-price?from=BTC&to=USD` | $0.002 | Coinbase spot/buy/sell + spread % |
 | `GET /tools/domain-age?domain=` | $0.003 | Registration date, age, registrar (RDAP) |
-| `GET /tools/hash?text=` | $0.001 | SHA-256/384/512, hex, base64(url), CRC32 |
+| `GET /tools/hash?text=` | $0.0005 | SHA-256/384/512, hex, base64(url), CRC32 |
 | `GET /tools/json?data=` | $0.001 | Flatten to dot paths / rows to CSV |
 | `GET /tools/jwt-decode?token=` | $0.001 | JWT header+payload with safety flags |
 | `GET /tools/regex?pattern=&text=` | $0.001 | Matches, groups, count, ReDoS-risk heuristic |
 | `GET /tools/slug?text=` | $0.001 | Unicode-safe slug (incl. Cyrillic translit) |
-| `GET /tools/uuid?version=&count=` | $0.001 | UUIDv4/v7, ULID, nanoid - batched |
+| `GET /tools/uuid?version=&count=` | $0.0005 | UUIDv4/v7, ULID, nanoid - batched |
 | `GET /tools/weather?lat=&lon=` | $0.001 | Current + next-3h temps (open-meteo) |
 
 ## x402 payment flow (one round-trip)

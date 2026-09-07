@@ -22,9 +22,9 @@ OpenAPI: https://sigtap-outreach-api.sigtap.workers.dev/openapi.json
 | `/deliverability?domain=example.com` | $0.003 | 12-point sending-domain audit: SPF, DKIM, DMARC, MX, blocklists, age |
 | `/grade?subject=...&body=...` | $0.005 | 12-point cold-email score with concrete fixes |
 | `/template?persona=founder&offer=...` | $0.01 | personalized cold email from proven templates |
-| `/tools/hash?text=...` | $0.001 | SHA-256/384/512 + hex/base64/base64url/CRC32 |
+| `/tools/hash?text=...` | $0.0005 | SHA-256/384/512 + hex/base64/base64url/CRC32 |
 | `/tools/jwt-decode?token=...` | $0.001 | JWT header+payload with safety flags (never verifies signatures) |
-| `/tools/uuid?count=5&version=v4` | $0.001 | batch random IDs (v4/v7/ulid/nanoid, crypto-secure) |
+| `/tools/uuid?count=5&version=v4` | $0.0005 | batch random IDs (v4/v7/ulid/nanoid, crypto-secure) |
 | `/tools/slug?text=...` | $0.001 | unicode URL slug, latin + Cyrillic transliteration |
 | `/tools/json?data=...&mode=flatten` | $0.001 | flatten JSON to dot paths or rows->CSV |
 | `/tools/regex?pattern=...&text=...` | $0.001 | matches with groups + ReDoS backtracking risk |
