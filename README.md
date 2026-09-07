@@ -18,6 +18,7 @@ the signed payment IS the credential.
 | `GET /` | Free catalog: every tool with price, params, live URL |
 | `GET /score-preview?subject=...` | Subject-line-only preview of the email grader |
 | `GET /hash-preview?text=...` | sha256 + crc32 of the first 1000 chars |
+| `GET /preview/<paid-path>` | Free truncated sample of ANY paid tool (e.g. `/preview/tools/hash?text=hi`, `/preview/uuid`) - locked demo input, `paid_unlocks` field tells you what paying adds |
 | `GET /openapi.json` | Full OpenAPI with `x-payment-info` prices |
 | `GET /llms.txt` | Agent-readable endpoint digest |
 
