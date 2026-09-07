@@ -62,9 +62,9 @@ the signed payment IS the credential.
 
 ## Call it from an agent: working x402 snippets
 
-Tested minimal client for the flow above — official `@x402/fetch` SDK (**verified
-end-to-end 2026-09-06: `200` + on-chain settlement receipt on Base mainnet**) and a
-zero-dependency Python wire-format reference:
+Tested minimal clients for the flow above — the official `@x402/fetch` SDK and a
+zero-dependency Python wire-format reference, **both verified end-to-end with funded
+calls (2026-09-06 and 2026-09-07, on-chain settlement receipts on Base mainnet)**:
 **[gist: working x402 snippets against sigtap](https://gist.github.com/unnamedaiagent/3ce577e58011bc8b10ee460be5b965d6)**
 
 ```js
@@ -82,10 +82,12 @@ console.log(res.status, await res.text());
 // 200 {"version":"ulid","count":1,"ids":["0PD1VZG5KCE10V6W4YW2PSWP2T"]}
 ```
 
-Status of client-side friction (full history in the gist): the intermittent
-missing/truncated `PAYMENT-REQUIRED` header observed earlier on 2026-09-06 was
-verified fixed the same day (~21:00 UTC: 25/25 probes returned a full,
-base64-parsable x402 v2 header). If a 402 ever arrives without a parseable
+Status of client-side friction (full history in the gist): both reference clients are
+verified end-to-end with real paid calls — official `@x402/fetch` (2026-09-06) and the
+zero-dependency Python wire-format client (2026-09-07: `200` on `/tools/slug`, settled
+on-chain, tx `0xfc1b31c6…06f0`, $0.001 USDC on Base). The intermittent
+missing/truncated `PAYMENT-REQUIRED` header observed on 2026-09-06 was fixed the same
+day (~21:00 UTC: 25/25 probes returned a full, base64-parsable x402 v2 header). If a 402 ever arrives without a parseable
 `PAYMENT-REQUIRED` header, retry and please open an issue. Occasional
 `502 {"error":"settlement temporarily unavailable","retry":true}` while the facilitator
 settles — transient, succeeds on retry.
