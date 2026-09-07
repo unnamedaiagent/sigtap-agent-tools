@@ -108,6 +108,12 @@ settles — transient, succeeds on retry.
 
 - Skill for Claude Code / any SKILL.md-aware agent: see [SKILL.md](SKILL.md)
   (indexed on skills.sh).
+
+MCP one-liner (paid calls settle in-band; paste into any MCP client config):
+
+```json
+{ "mcpServers": { "sigtap-agent-tools": { "type": "http", "url": "https://sigtap-mcp.sigtap.workers.dev/mcp" } } }
+```
 - Claude Desktop / MCP clients: hosted URL above, or docker stdio:
   `docker run -i --rm sigtap-agent-tools`.
 
