@@ -33,8 +33,12 @@ Framing: Content-Length (MCP spec) or line-delimited JSON — auto-detected.
 ## Hosted endpoint (payments settled in-band)
 
 `https://sigtap-mcp.sigtap.workers.dev/mcp` — Streamable HTTP,
-13 tools, x402 v2 (auto-signed USDC on Base). Health: `/health`.
-Server card: `/.well-known/mcp/server-card.json`.
+13 tools, x402 v2. On paid tool calls the payment travels in
+`params._meta["x402/payment"]` and the on-chain USDC receipt returns in
+`result._meta["x402/payment-response"]` (the official `@x402/mcp` contract).
+Health: `/health`. Server card: `/.well-known/mcp/server-card.json`.
+Wire-level guide with live-verified request/response bodies:
+[MCP.md](MCP.md).
 
 ## Docs
 
