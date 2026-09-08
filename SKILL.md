@@ -13,6 +13,9 @@ Free preview routes let you verify the output shape before paying anything.
 
 Streamable HTTP: `https://sigtap-mcp.sigtap.workers.dev/mcp`
 Add to any MCP client. Free `catalog` tool lists all prices.
+Calling it by hand? x402 payments go in `params._meta["x402/payment"]` and the
+receipt returns in `result._meta["x402/payment-response"]` - wire format:
+https://github.com/unnamedaiagent/sigtap-agent-tools/blob/main/MCP.md
 OpenAPI: https://sigtap-outreach-api.sigtap.workers.dev/openapi.json
 
 ## Paid endpoints (GET unless noted)
