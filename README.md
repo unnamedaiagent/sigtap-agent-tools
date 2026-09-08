@@ -97,7 +97,13 @@ settles — transient, succeeds on retry.
 ## MCP server
 
 - **Hosted**: `https://sigtap-mcp.sigtap.workers.dev/mcp` -
-  Streamable HTTP, 13 tools, x402 v2 payment settled in-band. Health: `/health`,
+  Streamable HTTP, 13 tools, x402 v2 payments settled **in-band**: on a paid
+  tool call the payment travels in `params._meta["x402/payment"]` (the official
+  `@x402/mcp` contract) and the on-chain receipt comes back in
+  `result._meta["x402/payment-response"]` - no HTTP headers involved.
+  Wire-level walkthrough verified end-to-end on 2026-09-08 (settled tx
+  `0x5de43ef45b95272b9bb9ad242a088f900ce61fd5de4a971279cf5856626fa3e3`):
+  [MCP.md](MCP.md). Health: `/health`,
   card: `/.well-known/mcp/server-card.json`.
 - **This repo** (`mcp_server.py`, Dockerfile): zero-dependency stdio server,
   Python 3 stdlib only. `catalog`, `score_preview`, `hash_preview` are free;
@@ -115,6 +121,12 @@ MCP one-liner (paid calls settle in-band; paste into any MCP client config):
 ```json
 { "mcpServers": { "sigtap-agent-tools": { "type": "http", "url": "https://sigtap-mcp.sigtap.workers.dev/mcp" } } }
 ```
+
+For raw-HTTP agents calling the MCP endpoint by hand: the payment goes in
+`params._meta["x402/payment"]` and the receipt in
+`result._meta["x402/payment-response"]` - the full wire format, with live
+request/response bodies and a zero-dependency Node client, is documented in
+[MCP.md](MCP.md).
 - Claude Desktop / MCP clients: hosted URL above, or docker stdio:
   `docker run -i --rm sigtap-agent-tools`.
 
