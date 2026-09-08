@@ -4,7 +4,7 @@ Hosted endpoint: `https://sigtap-mcp.sigtap.workers.dev/mcp` — Streamable HTTP
 13 tools (12 paid + free `catalog`), x402 v2 payments settled in-band
 (USDC on Base, PayAI facilitator). Stateless: no session id, one POST per call.
 
-Prices: $0.001–$0.005 per tool call, listed in each tool's description and in
+Prices: $0.001–$0.01 per tool call, listed in each tool's description and in
 the free `catalog` tool. No signup, no API keys — a signed payment is the credential.
 
 Every JSON block below is copied from a live run on 2026-09-08, including the
